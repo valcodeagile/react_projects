@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, FlatList, Alert, TouchableWithoutFeedback, Keyb
 import Header from './components/header';
 import TodoItem from './components/todoitem';
 import AddTodo from './components/addTodo';
+import SandBox from './components/sandbox';
 
 export default function App() {
   const [todos, setTodos] = useState([
@@ -12,18 +13,18 @@ export default function App() {
   ]);
 
   const pressHandler = (key) => {
-    setTodos((prevTodos) => {
-      return prevTodos.filter(todo => todo.key != key);
+    setTodos((abc) => {
+      return abc.filter(todo => todo.key != key);
     })
   }
 
   const submitHandler = (text) => {
 
     if(text.length > 3){
-      setTodos((prevTodos) => {
+      setTodos((efg) => {
         return [
           {text:text, key: Math.random().toString() },
-          ...prevTodos //spread operator
+          ...efg //spread operator
         ]
       })
     }else{
@@ -35,15 +36,15 @@ export default function App() {
   }
 
   return (
+    // <SandBox />
     <TouchableWithoutFeedback onPress={() => {
       Keyboard.dismiss();
     }}>
       <View style={styles.container}>
         <Header />
         <View style={styles.content}>
-          {/* add todo form */}
+          <AddTodo submitHandler={submitHandler}/>
           <View style={styles.list}>
-            <AddTodo submitHandler={submitHandler}/>
             <FlatList
               data={todos}
               renderItem={({ item }) => (
@@ -63,9 +64,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   content: {
+    flex:1,
     padding: 40,
+    backgroundColor:'pink',
   },
   list: {
+    flex:1,
     marginTop: 20,
+    backgroundColor:'yellow'
   },
 });
