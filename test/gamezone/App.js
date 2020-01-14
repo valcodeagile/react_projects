@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Home from './screens/home';
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
 import Navigator from './routes/homeStack';
@@ -14,14 +13,20 @@ export default function App() {
 
   if (fontsLoaded) {
     return (
-      <Navigator />
+      // <Navigator />
+      <View>
+        <Text>lorem ipsum</Text>
+      </View>
     );
   } else {
     return (
-      <AppLoading 
-        startAsync={getFonts} 
-        onFinish={() => setFontsLoaded(true)} 
-      />
+      // <AppLoading 
+      //   startAsync={getFonts} 
+      //   onFinish={() => setFontsLoaded(true)} 
+      // />
+      <View>
+        <Text>lorem ipsum2</Text>
+      </View>
     )
   }
 

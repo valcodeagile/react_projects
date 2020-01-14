@@ -1,10 +1,10 @@
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
-import { globalStyles } from '../styles/global';
+import { gStyles } from '../styles/global';
 
-export default function RevieDetails(){
+export default function ReviewDetails(){
     return (
-        <View style={globalStyles.container}>
+        <View style={gStyles.container}>
             <Text>RevieDetails Screen</Text>
         </View>
     );

@@ -1,6 +1,6 @@
 import {StyleSheet, View, Text} from 'react-native';
 
-export const styles = globalStyles.create({
+export const gStyles = StyleSheet.create({
     container:{
         flex:1,
         padding:20,
